@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Home() {
+  const openRdvModal = () => {
+    window.dispatchEvent(new CustomEvent('open-rdv-modal'));
+  };
+
   return (
     <>
       {/* Hero Section Luxe */}
@@ -44,6 +50,45 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bande de défilement : Ils nous ont fait confiance & Qu'attendez-vous ? */}
+      <section className="py-12 bg-white border-y border-[#c1cab4]/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <h1 className="text-2xl font-bold uppercase tracking-widest text-[#346b00] mb-1">ILS NOUS ONT FAIT CONFIANCE</h1>
+          </div>
+          <div className="flex items-center gap-4 bg-[#FAFAFC] px-6 py-3 rounded-2xl border border-[#c1cab4]/40">
+            <span className="text-sm font-semibold text-[#0d1c2f]">Qu&lsquo;attendez-vous pour nous rejoindre ?</span>
+            <button 
+              onClick={() => {
+                const modalTrigger = document.querySelector('nav button') as HTMLButtonElement;
+                if (modalTrigger) modalTrigger.click();
+              }}
+              className="text-xs font-bold bg-[#346b00] text-white px-4 py-2 rounded-full hover:shadow-md transition-all"
+            >
+              Lançons votre projet
+            </button>
+          </div>
+        </div>
+
+        {/* Marquee Container corrigé sans chevauchement */}
+        <div className="relative w-full overflow-hidden flex select-none">
+          <div className="flex animate-marquee whitespace-nowrap gap-16 items-center shrink-0">
+            {["TOUT PAS CHER", "GROUPE KOUASSI", "AFRICACOM", "SANTÉ MAMA", "ACTIFSFLY", "ECO-STRUCTURE", "GLOBAL RETAIL", "VISION 360"].map((client, index) => (
+              <div key={index} className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                <span className="text-xl font-black tracking-wider text-[#0d1c2f] font-mono">[{client}]</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex animate-marquee whitespace-nowrap gap-16 items-center shrink-0" aria-hidden="true">
+            {["TOUT PAS CHER", "GROUPE KOUASSI", "AFRICACOM", "SANTÉ MAMA", "ACTIFSFLY", "ECO-STRUCTURE", "GLOBAL RETAIL", "VISION 360"].map((client, index) => (
+              <div key={`dup-${index}`} className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                <span className="text-xl font-black tracking-wider text-[#0d1c2f] font-mono">[{client}]</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -138,7 +183,15 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d1c2f]">Prêt à transformer votre communication visuelle ?</h2>
           <p className="text-[#414939] max-w-xl mx-auto text-base">Nos experts vous accompagnent dès aujourd&lsquo;hui pour concrétiser vos idées avec un niveau de finition irréprochable.</p>
           <div className="flex justify-center gap-4 pt-4">
-            <button className="bg-[#346b00] text-white px-8 py-4 rounded-full font-semibold text-sm hover:shadow-xl hover:shadow-[#346b00]/20 transition-all">Prendre rendez-vous en atelier</button>
+            <button 
+              onClick={() => {
+                const modalTrigger = document.querySelector('nav button') as HTMLButtonElement;
+                if (modalTrigger) modalTrigger.click();
+              }}
+              className="bg-[#346b00] text-white px-8 py-4 rounded-full font-semibold text-sm hover:shadow-xl hover:shadow-[#346b00]/20 transition-all"
+            >
+              Prendre rendez-vous en atelier
+            </button>
           </div>
         </div>
       </section>
