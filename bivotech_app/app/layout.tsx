@@ -151,7 +151,7 @@ export default function RootLayout({
               <Link className={getLinkClass("/")} href="/">Accueil</Link>
               <Link className={getLinkClass("/services")} href="/services">Services</Link>
               <Link className={getLinkClass("/portfolio")} href="/portfolio">Portfolio</Link>
-              <Link className={getLinkClass("/temoignages")} href="/temoignages">Témoignages</Link>
+              <Link className={getLinkClass("/temoignages")} href="/blog">Blog</Link>
               <Link className={getLinkClass("/contact")} href="/contact">Contact</Link>
             </div>
 
@@ -181,7 +181,7 @@ export default function RootLayout({
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/")}>Accueil</Link>
               <Link href="/services" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/services")}>Services</Link>
               <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/portfolio")}>Portfolio</Link>
-              <Link href="/temoignages" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/temoignages")}>Témoignages</Link>
+              <Link href="/temoignages" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/blog")}>Blog</Link>
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className={getMobileLinkClass("/contact")}>Contact</Link>
               <button 
                 onClick={() => { setMobileMenuOpen(false); setIsModalOpen(true); }}
