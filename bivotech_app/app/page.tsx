@@ -7,10 +7,6 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[85vh] flex items-center py-20 bg-[#F5F4F0]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8 text-left">
-            <div className="inline-flex items-center gap-3 bg-[#346b00]/5 px-4 py-1.5 rounded-full border border-[#346b00]/10">
-              <span className="w-2 h-2 rounded-full bg-[#346b00]"></span>
-              <span className="text-xs font-semibold text-[#346b00] tracking-wide uppercase">Excellence & Précision 360°</span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0d1c2f] leading-[1.1]">
               Donnez une dimension <span className="text-[#346b00]">prestigieuse</span> à votre image de marque.
             </h1>
